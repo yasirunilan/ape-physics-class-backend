@@ -20,6 +20,14 @@ module.exports = {
       link: {
         type: Sequelize.STRING
       },
+      classCategoryId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // Class Session has a Class Category
+          model: 'ClassCategories',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

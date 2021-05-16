@@ -11,13 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate (models) {
       // define association here
+      ClassSession.belongsTo(models.ClassCategory)
     }
   };
   ClassSession.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     date: DataTypes.DATE,
-    link: DataTypes.STRING
+    link: DataTypes.STRING,
+    classCategoryId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'ClassSession'
