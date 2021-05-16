@@ -27,7 +27,7 @@ module.exports = {
           key: 'id'
         }
       },
-      expired: {
+      expires: {
         type: Sequelize.DATE
       },
       createdAt: {

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     token: DataTypes.STRING,
     authClientId: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    expired: DataTypes.DATE
+    expires: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'AuthAccessToken',

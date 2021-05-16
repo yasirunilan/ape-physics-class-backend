@@ -42,7 +42,7 @@ passport.use('bearer',new BearerStrategy(
     async function(token, done) {
         const user = await models.AuthAccessToken.findOne({ where: {token: token, expires: {
                     [sequelize.Op.gte]: moment()
-                } }, include: ['user'] });
+                } }, include: ['User'] });
         if (!user) { return done(null, false); }
         return done(null, user, { scope: 'all' });
     }
@@ -52,9 +52,9 @@ passport.use('refreshAuthBearer',new BearerStrategy(
     async function(token, done) {
         const authToken = await models.AuthRefreshToken.findOne({ where: {token: token, expires: {
                     [sequelize.Op.gte]: moment()
-                } }, include: ['user'] });
+                } }, include: ['User'] });
         if (!authToken) { return done(null, false); }
-        return done(null, authToken.user, { scope: 'all' });
+        return done(null, authToken.User, { scope: 'all' });
     }
 ));
 

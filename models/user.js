@@ -1,4 +1,6 @@
 'use strict';
+var bcrypt = require('bcryptjs');
+
 const {
   Model
 } = require('sequelize');
@@ -13,6 +15,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       User.belongsTo(models.UserRole)
       User.belongsToMany(models.ClassCategory, { through: models.UserClassCategory })
+    }
+    static comparePassword(password, hash, callback){
+      bcrypt.compare(password, hash, function(err, isMatch) {
+        if(err) {
+          return callback(err, null);
+        } else {
+          callback(null, isMatch);
+        }
+      });
     }
   };
   User.init({
