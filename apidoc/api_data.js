@@ -212,5 +212,67 @@ define({ "api": [
     },
     "filename": "api/v1/classSessions.js",
     "groupTitle": "ClassSessions"
+  },
+  {
+    "type": "get",
+    "url": "/users",
+    "title": "Get Users From Filter Values",
+    "name": "GetUserFromFilterValues",
+    "group": "User",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Query Param": [
+          {
+            "group": "Query Param",
+            "type": "Object",
+            "optional": true,
+            "field": "filters",
+            "description": "<p>Optional nested filters object.</p>"
+          },
+          {
+            "group": "Query Param",
+            "type": "String",
+            "optional": true,
+            "field": "filters[username]",
+            "description": "<p>Optional username.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example: With Username Filter",
+          "content": "{\n  \"filters\": {\n      \"username\": \"buddhi\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>user details</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: With Filter",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": {\n    \"data\": {\n      \"data\": [\n        {\n          \"id\": 1,\n          \"username\": \"buddhi\",\n          \"firstName\": \"Buddhi\",\n          \"lastName\": \"Vikasitha\",\n          \"email\": \"buddhi@gmail.com\",\n          \"nic\": \"111212121212V\",\n          \"phoneMain\": \"0702132356\",\n          \"phoneExtra\": \"0702132357\",\n          \"homePhone\": \"0412273465\",\n          \"city\": \"Matara\",\n          \"examYear\": \"2022\",\n          \"address\": \"\\\"Wimalasewana\\\", Hingurupanagala,Kotapola\",\n          \"userRoleId\": 3,\n          \"createdAt\": \"2021-05-16T08:20:46.000Z\",\n          \"updatedAt\": \"2021-05-16T08:20:46.000Z\",\n          \"UserRoleId\": 3\n        }\n      ]\n    }\n  }\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response: Without Filters",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": {\n    \"data\": {\n      \"data\": [\n        {\n          \"id\": 1,\n          \"username\": \"buddhi\",\n          \"firstName\": \"Buddhi\",\n          \"lastName\": \"Vikasitha\",\n          \"email\": \"buddhi@gmail.com\",\n          \"nic\": \"111212121212V\",\n          \"phoneMain\": \"0702132356\",\n          \"phoneExtra\": \"0702132357\",\n          \"homePhone\": \"0412273465\",\n          \"city\": \"Matara\",\n          \"examYear\": \"2022\",\n          \"address\": \"\\\"Wimalasewana\\\", Hingurupanagala,Kotapola\",\n          \"userRoleId\": 3,\n          \"createdAt\": \"2021-05-16T08:20:46.000Z\",\n          \"updatedAt\": \"2021-05-16T08:20:46.000Z\",\n          \"UserRoleId\": 3\n        },\n        {\n          \"id\": 5,\n          \"username\": \"eshan\",\n          \"firstName\": \"Eshan\",\n          \"lastName\": \"Pathirana\",\n          \"email\": \"eshan@gmail.com\",\n          \"nic\": \"35423432434V\",\n          \"phoneMain\": \"0732132356\",\n          \"phoneExtra\": \"0732132357\",\n          \"homePhone\": \"0442273465\",\n          \"city\": \"Matara\",\n          \"examYear\": \"2022\",\n          \"address\": \"\\\"Wimalasewana\\\", Hingurupanagala,Kotapola\",\n          \"userRoleId\": 3,\n          \"createdAt\": \"2021-05-16T08:20:46.000Z\",\n          \"updatedAt\": \"2021-05-16T08:20:46.000Z\",\n          \"UserRoleId\": 3\n        },\n        {\n          \"id\": 3,\n          \"username\": \"nevil\",\n          \"firstName\": \"Nevil\",\n          \"lastName\": \"Krishan\",\n          \"email\": \"nevil@gmail.com\",\n          \"nic\": \"222222323V\",\n          \"phoneMain\": \"0712132356\",\n          \"phoneExtra\": \"0712132357\",\n          \"homePhone\": \"0422273465\",\n          \"city\": \"Matara\",\n          \"examYear\": \"\",\n          \"address\": \"\\\"Wimalasewana\\\", Hingurupanagala,Kotapola\",\n          \"userRoleId\": 1,\n          \"createdAt\": \"2021-05-16T08:20:46.000Z\",\n          \"updatedAt\": \"2021-05-16T08:20:46.000Z\",\n          \"UserRoleId\": 1\n        },\n        {\n          \"id\": 4,\n          \"username\": \"ythilina\",\n          \"firstName\": \"Thilina\",\n          \"lastName\": \"Kumarasinghe\",\n          \"email\": \"thilina@gmail.com\",\n          \"nic\": \"343423224V\",\n          \"phoneMain\": \"0722132356\",\n          \"phoneExtra\": \"0722132357\",\n          \"homePhone\": \"0432273465\",\n          \"city\": \"Matara\",\n          \"examYear\": \"\",\n          \"address\": \"\\\"Wimalasewana\\\", Hingurupanagala,Kotapola\",\n          \"userRoleId\": 1,\n          \"createdAt\": \"2021-05-16T08:20:46.000Z\",\n          \"updatedAt\": \"2021-05-16T08:20:46.000Z\",\n          \"UserRoleId\": 1\n        },\n        {\n          \"id\": 2,\n          \"username\": \"yasiru\",\n          \"firstName\": \"Yasiru\",\n          \"lastName\": \"nilan\",\n          \"email\": \"yasiru@gmail.com\",\n          \"nic\": \"222222222V\",\n          \"phoneMain\": \"0702132850\",\n          \"phoneExtra\": \"0702132851\",\n          \"homePhone\": \"0702132852\",\n          \"city\": \"Matara\",\n          \"examYear\": \"\",\n          \"address\": \"\\\"Wimalasewana\\\", Hingurupanagala,Kotapola\",\n          \"userRoleId\": 2,\n          \"createdAt\": \"2021-05-16T08:20:46.000Z\",\n          \"updatedAt\": \"2021-05-16T08:20:46.000Z\",\n          \"UserRoleId\": 2\n        }\n      ]\n    }\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/user.js",
+    "groupTitle": "User"
   }
 ] });

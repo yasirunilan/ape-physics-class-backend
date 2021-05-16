@@ -1,14 +1,15 @@
 const userService = require('../services/userService');
 
-exports.getAllUsers = async (req, res, next) => {
+exports.getUserByFilterValues = async (req, res, next) => {
     try {
-        const users = await userService.getAllUser();
+        let filters = req.query.filters;
+        const users = await userService.getUsersByFilters(filters);
         if(users){
             res.send({
                 error: false,
-                data: users
+                data: {data: users}
             })
-        }else {
+        }else{
             res.send({data: [], error: false})
         }
     } catch(e) {

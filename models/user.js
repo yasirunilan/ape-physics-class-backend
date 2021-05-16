@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       User.belongsTo(models.UserRole)
       User.belongsToMany(models.ClassCategory, { through: models.UserClassCategory })
+      User.hasMany(models.AuthAccessToken)
+      User.hasMany(models.AuthRefreshToken)
     }
     static comparePassword(password, hash, callback){
       bcrypt.compare(password, hash, function(err, isMatch) {

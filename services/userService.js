@@ -2,10 +2,23 @@ var moment = require('moment');
 var model = require('../models/index');
 const sequelize = require("sequelize");
 
-exports.getAllUser = async () => {
+exports.getUsersByFilters = async (filters) => {
     try {
-        const user = await model.User.findAll({});
-        return user;
+        let userDataFilters = {}
+        if(filters){
+            if(filters.username){
+                userDataFilters.username = filters.username;
+            }
+        }
+        const users = await model.User.findAll({
+            where: {
+                [sequelize.Op.and]: [userDataFilters]
+            },
+            attributes: { exclude: ['password', 'accessToken'] },
+            order: [['firstName', 'ASC']]
+        });
+
+        return {data: users};
     } catch(e) {
         console.log(e.message)
         return false;
