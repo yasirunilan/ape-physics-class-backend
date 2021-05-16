@@ -44,6 +44,14 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      userRoleId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User has a UserRole
+          model: 'UserRoles',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
