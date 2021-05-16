@@ -16,6 +16,7 @@ module.exports = {
       name: 'Reminder 1',
       description: 'MCQ Class 1 Description',
       link: 'https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1',
+      active: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -23,6 +24,7 @@ module.exports = {
       name: 'Reminder 2',
       description: 'MCQ Class 2 Description',
       link: 'https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1',
+      active: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -30,6 +32,7 @@ module.exports = {
       name: 'Reminder 3',
       description: 'MCQ Class 3 Description',
       link: 'https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1',
+      active: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -38,6 +41,7 @@ module.exports = {
         name: 'Reminder 4',
         description: 'MCQ Class 4 Description',
         link: 'https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1',
+        active: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },{
@@ -45,6 +49,7 @@ module.exports = {
         name: 'Reminder 5',
         description: 'MCQ Class 5 Description',
         link: 'https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1',
+        active: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});

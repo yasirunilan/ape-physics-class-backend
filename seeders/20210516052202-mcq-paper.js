@@ -16,6 +16,7 @@ module.exports = {
       name: 'MCQ Paper 1',
       description: 'MCQ Paper 1 Description',
       link: 'https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit',
+      active: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -23,6 +24,7 @@ module.exports = {
       name: 'MCQ Paper 2',
       description: 'MCQ Paper 2 Description',
       link: 'https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit',
+      active: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -30,6 +32,7 @@ module.exports = {
       name: 'MCQ Paper 3',
       description: 'MCQ Paper 3 Description',
       link: 'https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit',
+      active: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -38,6 +41,7 @@ module.exports = {
         name: 'MCQ Paper 4',
         description: 'MCQ Paper 4 Description',
         link: 'https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit',
+        active: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },{
@@ -45,6 +49,7 @@ module.exports = {
         name: 'MCQ Paper 5',
         description: 'MCQ Paper 5 Description',
         link: 'https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit',
+        active: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});

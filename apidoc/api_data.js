@@ -215,6 +215,96 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/mcqClasses",
+    "title": "Get All Active MCQ Classes",
+    "name": "GetMCQClasses",
+    "group": "MCQClass",
+    "version": "1.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>MCQ Classes details</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Reminder 1\",\n      \"description\": \"MCQ Class 1 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Reminder 2\",\n      \"description\": \"MCQ Class 2 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"Reminder 3\",\n      \"description\": \"MCQ Class 3 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"Reminder 4\",\n      \"description\": \"MCQ Class 4 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"Reminder 5\",\n      \"description\": \"MCQ Class 5 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/mcqClass.js",
+    "groupTitle": "MCQClass"
+  },
+  {
+    "type": "get",
+    "url": "/mcqPapers",
+    "title": "Get All Active MCQ Papers",
+    "name": "GetMCQPapers",
+    "group": "MCQPaper",
+    "version": "1.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>MCQ Paper details</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"MCQ Paper 1\",\n      \"description\": \"MCQ Paper 1 Description\",\n      \"link\": \"https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"MCQ Paper 2\",\n      \"description\": \"MCQ Paper 2 Description\",\n      \"link\": \"https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"MCQ Paper 3\",\n      \"description\": \"MCQ Paper 3 Description\",\n      \"link\": \"https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"MCQ Paper 4\",\n      \"description\": \"MCQ Paper 4 Description\",\n      \"link\": \"https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"MCQ Paper 5\",\n      \"description\": \"MCQ Paper 5 Description\",\n      \"link\": \"https://docs.google.com/forms/d/1RjTM59W-HedqULP9rEMROa-tSCltWkR894OINzGaPt4/edit\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/mcqPapers.js",
+    "groupTitle": "MCQPaper"
+  },
+  {
+    "type": "get",
+    "url": "/practicalVideos",
+    "title": "Get All Active Practical Videos",
+    "name": "GetPracticalVideos",
+    "group": "PracticalVideo",
+    "version": "1.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Practical Video details</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Practical 1\",\n      \"description\": \"Practical 1 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Practical 2\",\n      \"description\": \"Practical 2 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"Practical 3\",\n      \"description\": \"Practical 3 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"Practical 4\",\n      \"description\": \"Practical 4 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"Practical 5\",\n      \"description\": \"Practical 5 Description\",\n      \"link\": \"https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1\",\n      \"active\": true,\n      \"createdAt\": \"2021-05-16T12:36:39.000Z\",\n      \"updatedAt\": \"2021-05-16T12:36:39.000Z\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/practicalVideo.js",
+    "groupTitle": "PracticalVideo"
+  },
+  {
+    "type": "get",
     "url": "/users",
     "title": "Get Users From Filter Values",
     "name": "GetUserFromFilterValues",

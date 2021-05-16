@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   PracticalVideo.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    link: DataTypes.STRING
+    link: DataTypes.STRING,
+    active: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'PracticalVideo',

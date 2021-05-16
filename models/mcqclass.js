@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   McqClass.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    link: DataTypes.STRING
+    link: DataTypes.STRING,
+    active: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'McqClass',
