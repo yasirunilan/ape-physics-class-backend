@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Eco Rehabitat Works Fine' });
+    res.render('index', { title: 'Ape Physics Panthiya' });
 });
 
 module.exports = router;

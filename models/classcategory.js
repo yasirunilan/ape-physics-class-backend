@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
   ClassCategory.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    fee: DataTypes.STRING
+    fee: DataTypes.STRING,
+    active: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'ClassCategory',
