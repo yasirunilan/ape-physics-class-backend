@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
+      ClassCategory.belongsToMany(models.User, { through: models.UserClassCategory })
     }
   }
   ClassCategory.init({
