@@ -9,6 +9,7 @@ const userController = require('../../controllers/userController')
  * @apiName GetUserFromFilterValues
  * @apiGroup User
  * @apiVersion 1.0.0
+ * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
  * @apiParam (Query Param) {Object} [filters]  Optional nested filters object.
  * @apiParam (Query Param) {String} [filters[username]] Optional username.
  * @apiParamExample {json} Request-Example: With Username Filter

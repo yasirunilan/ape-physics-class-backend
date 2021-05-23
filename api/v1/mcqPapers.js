@@ -8,6 +8,7 @@ const mcqPaperController = require('../../controllers/mcqPaperController')
  * @apiName GetMCQPapers
  * @apiGroup MCQPaper
  * @apiVersion 1.0.0
+ * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
  * @apiSuccess {object} data MCQ Paper details
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK

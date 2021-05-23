@@ -11,8 +11,14 @@ module.exports = {
       date: {
         type: Sequelize.DATE
       },
-      slip: {
+      slipFileType: {
         type: Sequelize.BLOB
+      },
+      slip: {
+        type: Sequelize.BLOB('Medium')
+      },
+      amount: {
+        type: Sequelize.INTEGER
       },
       note: {
         type: Sequelize.STRING

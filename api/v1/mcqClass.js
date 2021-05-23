@@ -8,6 +8,7 @@ const mcqClassController = require('../../controllers/mcqClassController')
  * @apiName GetMCQClasses
  * @apiGroup MCQClass
  * @apiVersion 1.0.0
+ * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
  * @apiSuccess {object} data MCQ Classes details
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK

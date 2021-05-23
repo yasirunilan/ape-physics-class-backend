@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const dataUriToBuffer = require('data-uri-to-buffer');
+
 module.exports = (sequelize, DataTypes) => {
   class Payment extends Model {
     /**
@@ -15,7 +17,26 @@ module.exports = (sequelize, DataTypes) => {
   };
   Payment.init({
     date: DataTypes.DATE,
-    slip: DataTypes.BLOB,
+    slip: {
+      type: DataTypes.BLOB('Medium'),
+      get() {
+        let slip = this.getDataValue('slip');
+        if(slip){
+          let slipBase64Content = slip.toString('base64');
+          let slipFileType = this.getDataValue('slipFileType')
+          let slipFullBase64 = 'data:'+slipFileType+';base64,'+slipBase64Content;
+          return slipFullBase64;
+        }else{
+          return slip;
+        }
+      },
+      set (data){
+        let decoded = dataUriToBuffer(data);
+        this.setDataValue('slip', decoded);
+      }
+    },
+    slipFileType: DataTypes.STRING,
+    amount: DataTypes.NUMBER,
     expireDate: DataTypes.DATE,
     note: DataTypes.STRING
   }, {

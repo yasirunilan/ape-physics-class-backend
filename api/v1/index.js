@@ -8,6 +8,7 @@ var classSessionsRoutes  = require('./classSessions');
 var mcqClassRoutes  = require('./mcqClass');
 var mcqPapersRoutes  = require('./mcqPapers');
 var practicalVideoRoutes  = require('./practicalVideo');
+var paymentRoutes  = require('./payment');
 
 router.use('/auth', authRoutes);
 
@@ -26,8 +27,6 @@ router.use('/classCategories', function(req, res, next) {
         next();
     })(req, res, next);
 }, classCategoriesRoutes);
-
-router.use('/classSessions', require('./classSessions'));
 
 router.use('/classSessions', function(req, res, next) {
     passport.authenticate('bearer', function(err, user, info) {
@@ -61,5 +60,13 @@ router.use('/practicalVideos', function(req, res, next) {
         next();
     })(req, res, next);
 }, practicalVideoRoutes);
+
+router.use('/payments', function(req, res, next) {
+    passport.authenticate('bearer', function(err, user, info) {
+        if (err) { return next(err) }
+        if (!user) { return res.status(401).send({data: [], error: true, message: "Invalid Token"}) }
+        next();
+    })(req, res, next);
+}, paymentRoutes);
 
 module.exports = router;

@@ -16,7 +16,7 @@ This is the backend app for Physics Ape Panthiya written using NodeJs.
 7. log in to the physics_backend and execute the following commands to run the migrations against the db and load dummy data using seeds
 
     ```
-   node_modules/.bin/sequelize db:migrate
+   npx sequelize-cli db:migrate
    npx sequelize-cli db:seed:all
     ```
    to run a specific seed file
@@ -39,7 +39,7 @@ This is the backend app for Physics Ape Panthiya written using NodeJs.
 5. then update the config.json file with correct values.
 6. run following command to run the migrations to the db
 
-    ```node_modules/.bin/sequelize db:migrate```
+    ```npx sequelize-cli db:migrate```
 7. run following command to load dummy data to the database using seeds.
 
     ```npx sequelize-cli db:seed:all```

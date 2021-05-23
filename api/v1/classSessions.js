@@ -7,6 +7,7 @@ const classSessionsController = require('../../controllers/classSessionsControll
  * @apiName GetClassSessionsForClassCategory
  * @apiGroup ClassSessions
  * @apiVersion 1.0.0
+ * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
  * @apiParam {Number} classCategoryId  Class Category Id
  * @apiSuccess {object} data class sessions details
  * @apiSuccessExample Success-Response:

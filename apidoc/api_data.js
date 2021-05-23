@@ -112,6 +112,20 @@ define({ "api": [
     "name": "GetClassCategories",
     "group": "ClassCategory",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Query Param": [
@@ -177,6 +191,20 @@ define({ "api": [
     "name": "GetClassSessionsForClassCategory",
     "group": "ClassSessions",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -220,6 +248,20 @@ define({ "api": [
     "name": "GetMCQClasses",
     "group": "MCQClass",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -250,6 +292,20 @@ define({ "api": [
     "name": "GetMCQPapers",
     "group": "MCQPaper",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -274,12 +330,79 @@ define({ "api": [
     "groupTitle": "MCQPaper"
   },
   {
+    "type": "post",
+    "url": "/payments/addNewPayment",
+    "title": "Add New Payment",
+    "name": "AddNewPayment",
+    "group": "Payment",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": " {\n\t\"date\": \"2021-10-10\",\n\t\"amount\": 1000,\n\t\"expireDate\": \"2021-11-10\",\n\t\"note\": \"New Note\",\n\t\"slip\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMGZjNjIwMDAwNTA2OTAwMDBhZTZmMDAwMDUyNzgwMDAwMzFhNjAwMDBjY2I0MDAwMGUyYzAwMDAwNzNjYzAwMDBhZTQzMDEwMP/iC/hJQ0NfUFJPRklMRQABAQAAC+gAAAAAAgAAAG1udHJSR0IgWFlaIAfZAAMAGwAVACQAH2Fjc3AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAD21gABAAAAANMtAAAAACn4Pd6v8lWueEL65MqDOQ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEGRlc2MAAAFEAAAAeWJYWVoAAAHAAAAAFGJUUkMAAAHUAAATQLVTRlw93Eefjvh05MHYADaYNNUMAZA0waajTAGqGImCjTgAGBTE4YTqeZtjv8AS+dMghSuvd+u830spuXnTAAAAABD870fjtTzBrp/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=\",\n\t\"slipFileType\": \"image/jpeg\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>added payment data</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": {\n    \"slip\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMGZjNjIwMDAwNTA2OTAwMDBhZTZmMDAwMDUyNzgwMDAwMzFhNjAwMDBjY2I0MDAwMGUyYzAwMDAwNzNjYzAwMDBhZTQzMDEwMP/iC/hJQ0NfUFJPRklMRQABAQAAC+gAAAAAAgAAAG1udHJSR0IgWFlaIAfZAAMAGwAVACQAH2Fjc3AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAD21gABAAAAANMtAAAAACn4Pd6v8lWueEL65MqDOQ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEGRlc2MAAAFEAAAAeWJYWVoAAAHAAAAAFGJUUkMAAAHUAAA/wEM9ngarYSLYkZK8kmBKVpJ0KJHCQtS52JW7Gpb4FuB0KCNIWBaPUhFErVITEyRsbWjCbEyh6JEIT50ehLIJDYgS4KlNLppsajglcivZDfIrGhoYxoayMQdMaVoj6cmJCyjtIsy+EcmeHA2ybb7erGTQyAqIPApFG7HoI/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=\",\n    \"id\": 12,\n    \"date\": \"2021-10-10T00:00:00.000Z\",\n    \"amount\": 1000,\n    \"expireDate\": \"2021-11-10T00:00:00.000Z\",\n    \"slipFileType\": \"image/jpeg\",\n    \"updatedAt\": \"2021-05-23T05:25:55.943Z\",\n    \"createdAt\": \"2021-05-23T05:25:55.943Z\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/payment.js",
+    "groupTitle": "Payment"
+  },
+  {
     "type": "get",
     "url": "/practicalVideos",
     "title": "Get All Active Practical Videos",
     "name": "GetPracticalVideos",
     "group": "PracticalVideo",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -310,6 +433,20 @@ define({ "api": [
     "name": "GetUserFromFilterValues",
     "group": "User",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Query Param": [
