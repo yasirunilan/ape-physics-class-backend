@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('ClassCategories', [{
+    await queryInterface.bulkInsert('classCategories', [{
       id: 1,
       name: '2021 Theory/Revision',
       description: '2021 Theory/Revision Class',
@@ -70,6 +70,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('ClassCategories', null, {});
+    await queryInterface.bulkDelete('classCategories', null, {});
   }
 };

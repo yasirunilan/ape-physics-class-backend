@@ -14,7 +14,7 @@ module.exports = {
     */
     const salt = bcrypt.genSaltSync();
     let pass = bcrypt.hashSync('12345', salt);
-    await queryInterface.bulkInsert('Users', [{
+    await queryInterface.bulkInsert('users', [{
       id: 1,
       username: 'buddhi',
       password: pass,
@@ -110,6 +110,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Users', null, {});
+    await queryInterface.bulkDelete('users', null, {});
   }
 };

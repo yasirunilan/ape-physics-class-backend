@@ -12,6 +12,7 @@ const userController = require('../../controllers/userController')
  * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
  * @apiParam (Query Param) {Object} [filters]  Optional nested filters object.
  * @apiParam (Query Param) {String} [filters[username]] Optional username.
+ * @apiParam (Query Param) {String} [filters[email]] Optional email.
  * @apiParamExample {json} Request-Example: With Username Filter
  *     {
  *       "filters": {
@@ -43,7 +44,6 @@ const userController = require('../../controllers/userController')
           "userRoleId": 3,
           "createdAt": "2021-05-16T08:20:46.000Z",
           "updatedAt": "2021-05-16T08:20:46.000Z",
-          "UserRoleId": 3
         }
       ]
     }
@@ -72,7 +72,6 @@ const userController = require('../../controllers/userController')
           "userRoleId": 3,
           "createdAt": "2021-05-16T08:20:46.000Z",
           "updatedAt": "2021-05-16T08:20:46.000Z",
-          "UserRoleId": 3
         },
         {
           "id": 5,
@@ -90,7 +89,6 @@ const userController = require('../../controllers/userController')
           "userRoleId": 3,
           "createdAt": "2021-05-16T08:20:46.000Z",
           "updatedAt": "2021-05-16T08:20:46.000Z",
-          "UserRoleId": 3
         },
         {
           "id": 3,
@@ -108,7 +106,6 @@ const userController = require('../../controllers/userController')
           "userRoleId": 1,
           "createdAt": "2021-05-16T08:20:46.000Z",
           "updatedAt": "2021-05-16T08:20:46.000Z",
-          "UserRoleId": 1
         },
         {
           "id": 4,
@@ -126,7 +123,6 @@ const userController = require('../../controllers/userController')
           "userRoleId": 1,
           "createdAt": "2021-05-16T08:20:46.000Z",
           "updatedAt": "2021-05-16T08:20:46.000Z",
-          "UserRoleId": 1
         },
         {
           "id": 2,
@@ -144,7 +140,6 @@ const userController = require('../../controllers/userController')
           "userRoleId": 2,
           "createdAt": "2021-05-16T08:20:46.000Z",
           "updatedAt": "2021-05-16T08:20:46.000Z",
-          "UserRoleId": 2
         }
       ]
     }

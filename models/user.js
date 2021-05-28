@@ -5,7 +5,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class user extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,10 +13,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.belongsTo(models.UserRole)
-      User.belongsToMany(models.ClassCategory, { through: models.UserClassCategory })
-      User.hasMany(models.AuthAccessToken)
-      User.hasMany(models.AuthRefreshToken)
+      user.belongsTo(models.userRole)
+      user.belongsToMany(models.classCategory, { through: models.userClassCategory })
+      user.hasMany(models.authAccessToken)
+      user.hasMany(models.authRefreshToken)
     }
     static comparePassword(password, hash, callback){
       bcrypt.compare(password, hash, function(err, isMatch) {
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   };
-  User.init({
+  user.init({
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     firstName: DataTypes.STRING,
@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
     userRoleId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'user',
   });
-  return User;
+  return user;
 };

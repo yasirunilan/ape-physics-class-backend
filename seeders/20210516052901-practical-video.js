@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('PracticalVideos', [{
+    await queryInterface.bulkInsert('practicalVideos', [{
       id: 1,
       name: 'Practical 1',
       description: 'Practical 1 Description',

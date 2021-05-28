@@ -16,13 +16,13 @@ passport.use('login',new BasicStrategy({
     usernameField: 'username',
     passwordField: 'password'
 },function(username, password, done) {
-    models.User
+    models.user
         .findOne({ where: { username: username } })
         .then(function(user) { // successful query to database
             if(!user) {
                 return done(null, false, { message: 'No User Found With Username ' + username });
             }
-            models.User.comparePassword(password, user.password, function(err, isMatch) {
+            models.user.comparePassword(password, user.password, function(err, isMatch) {
                 if(err) {
                     return done(err);
                 }
@@ -40,9 +40,9 @@ passport.use('login',new BasicStrategy({
 
 passport.use('bearer',new BearerStrategy(
     async function(token, done) {
-        const user = await models.AuthAccessToken.findOne({ where: {token: token, expires: {
+        const user = await models.authAccessToken.findOne({ where: {token: token, expires: {
                     [sequelize.Op.gte]: moment()
-                } }, include: ['User'] });
+                } }, include: ['user'] });
         if (!user) { return done(null, false); }
         return done(null, user, { scope: 'all' });
     }

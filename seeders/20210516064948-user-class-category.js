@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('UserClassCategories', [{
+    await queryInterface.bulkInsert('userClassCategories', [{
       id: 1,
       userId: 1,
       classId: 1,
@@ -44,6 +44,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('UserClassCategories', null, {});
+    await queryInterface.bulkDelete('userClassCategories', null, {});
   }
 };

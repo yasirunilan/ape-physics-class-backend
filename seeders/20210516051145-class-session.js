@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('ClassSessions', [{
+    await queryInterface.bulkInsert('classSessions', [{
       id: 1,
       name: '2021-01-07',
       description: '2021-01-07 Class',
@@ -297,6 +297,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('ClassSessions', null, {});
+    await queryInterface.bulkDelete('classSessions', null, {});
   }
 };

@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('McqPapers', [{
+    await queryInterface.bulkInsert('mcqPapers', [{
       id: 1,
       name: 'MCQ Paper 1',
       description: 'MCQ Paper 1 Description',
@@ -62,6 +62,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('McqPapers', null, {});
+    await queryInterface.bulkDelete('mcqPapers', null, {});
   }
 };

@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Payments', [{
+    await queryInterface.bulkInsert('payments', [{
       id: 1,
       date: '2021-01-01',
       note: '',
@@ -91,6 +91,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Payments', null, {});
+    await queryInterface.bulkDelete('payments', null, {});
   }
 };

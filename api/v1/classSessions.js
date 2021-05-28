@@ -24,7 +24,6 @@ const classSessionsController = require('../../controllers/classSessionsControll
       "classCategoryId": 1,
       "createdAt": "2021-05-16T07:04:12.000Z",
       "updatedAt": "2021-05-16T07:04:12.000Z",
-      "ClassCategoryId": 1
     },
     {
       "id": 2,
@@ -35,7 +34,6 @@ const classSessionsController = require('../../controllers/classSessionsControll
       "classCategoryId": 1,
       "createdAt": "2021-05-16T07:04:12.000Z",
       "updatedAt": "2021-05-16T07:04:12.000Z",
-      "ClassCategoryId": 1
     },
     {
       "id": 3,
@@ -46,7 +44,6 @@ const classSessionsController = require('../../controllers/classSessionsControll
       "classCategoryId": 1,
       "createdAt": "2021-05-16T07:04:12.000Z",
       "updatedAt": "2021-05-16T07:04:12.000Z",
-      "ClassCategoryId": 1
     }
   ]
 }

@@ -9,8 +9,11 @@ exports.getUsersByFilters = async (filters) => {
             if(filters.username){
                 userDataFilters.username = filters.username;
             }
+            if(filters.email){
+                userDataFilters.email = filters.email;
+            }
         }
-        const users = await model.User.findAll({
+        const users = await model.user.findAll({
             where: {
                 [sequelize.Op.and]: [userDataFilters]
             },
@@ -18,6 +21,9 @@ exports.getUsersByFilters = async (filters) => {
             order: [['firstName', 'ASC']]
         });
 
+
+        console.log('users')
+        // console.log(users)
         return {data: users};
     } catch(e) {
         console.log(e.message)
@@ -28,7 +34,7 @@ exports.getUsersByFilters = async (filters) => {
 // this method used to save the access token and refresh token generated when loign action is happening with username and password
 exports.saveAuthUserAccessToken = async (username, accessToken, refreshToken) => {
     try {
-        const user = await model.User.findOne({ where: {username: username}, attributes: { exclude: ['password'] }});
+        const user = await model.user.findOne({ where: {username: username}, attributes: { exclude: ['password'] }});
         let accessTokenObj = {
             token: accessToken,
             authClientId: 'front_end_client',
@@ -41,8 +47,8 @@ exports.saveAuthUserAccessToken = async (username, accessToken, refreshToken) =>
             userId: user.id,
             expires: moment(new Date()).add(7, 'days')
         }
-        await model.AuthAccessToken.create(accessTokenObj)
-        await model.AuthRefreshToken.create(refreshTokenObj)
+        await model.authAccessToken.create(accessTokenObj)
+        await model.authRefreshToken.create(refreshTokenObj)
 
         return true;
     } catch(e) {
@@ -55,14 +61,14 @@ exports.saveAuthUserAccessToken = async (username, accessToken, refreshToken) =>
 // this method used to save the access token generated from a refresh token
 exports.saveAuthUserAccessTokenFromRefreshToken = async (username, accessToken) => {
     try {
-        const user = await model.User.findOne({ where: {username: username}, attributes: { exclude: ['password'] }});
+        const user = await model.user.findOne({ where: {username: username}, attributes: { exclude: ['password'] }});
         let accessTokenObj = {
             token: accessToken,
             authClientId: 'front_end_client',
             userId: user.id,
             expires: moment(new Date()).add(2, 'days')
         }
-        await model.AuthAccessToken.create(accessTokenObj)
+        await model.authAccessToken.create(accessTokenObj)
 
         return true;
     } catch(e) {

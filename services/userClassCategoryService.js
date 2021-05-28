@@ -8,7 +8,7 @@ exports.addNewUserClassCategoryPayment = async (data, payment) => {
             paymentId: payment.id,
         };
 
-        let savedPayment = await model.Payment.create(payment)
+        let savedPayment = await model.payment.create(payment)
         return savedPayment;
 
     } catch(e) {

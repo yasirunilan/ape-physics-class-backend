@@ -13,7 +13,7 @@ exports.addNewPayment = async (data) => {
             payment.slip = data.slip;
             payment.slipFileType = data.slipFileType
         }
-        let savedPayment = await model.Payment.create(payment)
+        let savedPayment = await model.payment.create(payment)
         return savedPayment;
 
     } catch(e) {

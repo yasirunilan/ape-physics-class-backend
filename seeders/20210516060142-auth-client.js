@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('AuthClients', [{
+    await queryInterface.bulkInsert('authClients', [{
       clientId: 'front_end_client',
       grantType: 'Password refresh_token',
       createdAt: new Date(),
@@ -26,6 +26,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('AuthClients', null, {});
+    await queryInterface.bulkDelete('authClients', null, {});
   }
 };

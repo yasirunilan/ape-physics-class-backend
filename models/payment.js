@@ -5,7 +5,7 @@ const {
 const dataUriToBuffer = require('data-uri-to-buffer');
 
 module.exports = (sequelize, DataTypes) => {
-  class Payment extends Model {
+  class payment extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,9 +13,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      payment.belongsTo(models.userClassCategory)
     }
   };
-  Payment.init({
+  payment.init({
     date: DataTypes.DATE,
     slip: {
       type: DataTypes.BLOB('Medium'),
@@ -35,13 +36,14 @@ module.exports = (sequelize, DataTypes) => {
         this.setDataValue('slip', decoded);
       }
     },
+    userClassCategoryId: DataTypes.NUMBER,
     slipFileType: DataTypes.STRING,
     amount: DataTypes.NUMBER,
     expireDate: DataTypes.DATE,
     note: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Payment',
+    modelName: 'payment',
   });
-  return Payment;
+  return payment;
 };
