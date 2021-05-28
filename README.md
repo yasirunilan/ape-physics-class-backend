@@ -55,4 +55,7 @@ To Generate API Docs
 ```apidoc -i api/ -o apidoc/```
 
 To Migrate Data in Production DB
-```node_modules/.bin/sequelize db:migrate --env production```
+```npx sequelize-cli db:migrate --env production```
+
+To Generate Model
+```npx sequelize-cli model:generate --name Category --attributes name:string,description:string```

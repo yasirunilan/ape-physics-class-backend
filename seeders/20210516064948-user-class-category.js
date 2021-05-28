@@ -15,7 +15,6 @@ module.exports = {
       id: 1,
       userId: 1,
       classId: 1,
-      paymentId: 5,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -23,7 +22,6 @@ module.exports = {
         id: 2,
         userId: 1,
         classId: 1,
-        paymentId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -31,7 +29,6 @@ module.exports = {
         id: 3,
         userId: 1,
         classId: 1,
-        paymentId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});

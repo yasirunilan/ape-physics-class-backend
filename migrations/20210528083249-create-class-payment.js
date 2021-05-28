@@ -1,34 +1,28 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('authRefreshTokens', {
+    await queryInterface.createTable('classPayments', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      token: {
-        type: Sequelize.STRING
-      },
-      authClientId: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        references: {
-          model: 'authClients',
-          key: 'clientId'
-        }
-      },
-      userId: {
+      paymentId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'users',
+          model: 'payments',
           key: 'id'
         }
       },
-      expires: {
-        type: Sequelize.DATE
+      userClassCategoryId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'userClassCategories',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +35,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('authRefreshTokens');
+    await queryInterface.dropTable('classPayments');
   }
 };

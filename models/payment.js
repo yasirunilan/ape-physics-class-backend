@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      payment.belongsTo(models.userClassCategory)
     }
   };
   payment.init({
@@ -36,7 +35,6 @@ module.exports = (sequelize, DataTypes) => {
         this.setDataValue('slip', decoded);
       }
     },
-    userClassCategoryId: DataTypes.NUMBER,
     slipFileType: DataTypes.STRING,
     amount: DataTypes.NUMBER,
     expireDate: DataTypes.DATE,

@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
   userClassCategory.init({
     userId: DataTypes.INTEGER,
     classId: DataTypes.INTEGER,
-    paymentId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'userClassCategory',

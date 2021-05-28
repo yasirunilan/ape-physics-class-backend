@@ -23,9 +23,6 @@ module.exports = {
       note: {
         type: Sequelize.STRING
       },
-      userClassCategoryId: {
-        type: Sequelize.INTEGER
-      },
       expireDate: {
         type: Sequelize.DATE
       },
