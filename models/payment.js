@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      payment.belongsTo(models.user);
+      payment.belongsTo(models.classCategory);
     }
   };
   payment.init({

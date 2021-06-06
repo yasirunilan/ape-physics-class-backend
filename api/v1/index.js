@@ -9,7 +9,6 @@ var mcqClassRoutes  = require('./mcqClass');
 var mcqPapersRoutes  = require('./mcqPapers');
 var practicalVideoRoutes  = require('./practicalVideo');
 var paymentRoutes  = require('./payment');
-var classPaymentRoutes  = require('./classPayments');
 
 router.use('/auth', authRoutes);
 
@@ -66,16 +65,9 @@ router.use('/payments', function(req, res, next) {
     passport.authenticate('bearer', function(err, user, info) {
         if (err) { return next(err) }
         if (!user) { return res.status(401).send({data: [], error: true, message: "Invalid Token"}) }
+        req.user = user;
         next();
     })(req, res, next);
 }, paymentRoutes);
-
-router.use('/classPayments', function(req, res, next) {
-    passport.authenticate('bearer', function(err, user, info) {
-        if (err) { return next(err) }
-        if (!user) { return res.status(401).send({data: [], error: true, message: "Invalid Token"}) }
-        next();
-    })(req, res, next);
-}, classPaymentRoutes);
 
 module.exports = router;

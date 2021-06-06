@@ -52,9 +52,9 @@ passport.use('refreshAuthBearer',new BearerStrategy(
     async function(token, done) {
         const authToken = await models.AuthRefreshToken.findOne({ where: {token: token, expires: {
                     [sequelize.Op.gte]: moment()
-                } }, include: ['User'] });
+                } }, include: ['user'] });
         if (!authToken) { return done(null, false); }
-        return done(null, authToken.User, { scope: 'all' });
+        return done(null, authToken.user, { scope: 'all' });
     }
 ));
 

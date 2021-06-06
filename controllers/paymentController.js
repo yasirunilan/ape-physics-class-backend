@@ -3,7 +3,8 @@ const paymentService = require('../services/paymentService');
 exports.addNewPayment = async (req, res, next) => {
     try {
         let data = req.body;
-        const newPayment = await paymentService.addNewPayment(data);
+        let user = req.user;
+        const newPayment = await paymentService.addNewPayment(data, user);
         if(newPayment){
             res.send({
                 error: false,

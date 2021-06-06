@@ -150,6 +150,6 @@ const classCategoriesController = require('../../controllers/classCategoriesCont
   ]
 }
  */
-router.get('/', classCategoriesController.getAllClassCategories);
+router.get('/', classCategoriesController.getAllClassCategoriesWhichAreNotOnlyPaymentCategories);
 
 module.exports = router;

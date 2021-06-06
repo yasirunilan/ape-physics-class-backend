@@ -13,6 +13,8 @@ module.exports = {
     */
     await queryInterface.bulkInsert('payments', [{
       id: 1,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-01-01',
       note: '',
       expireDate: '2021-01-31',
@@ -20,6 +22,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 2,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-02-01',
       note: '',
       expireDate: '2021-02-28',
@@ -27,6 +31,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 3,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-03-01',
       note: '',
       expireDate: '2021-03-31',
@@ -34,6 +40,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 4,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-04-01',
       note: '',
       expireDate: '2021-04-30',
@@ -41,6 +49,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 5,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-05-01',
       note: '',
       expireDate: '2021-05-31',
@@ -48,6 +58,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 6,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-01-01',
       note: '',
       expireDate: '2021-01-31',
@@ -55,6 +67,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 7,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-02-01',
       note: '',
       expireDate: '2021-02-28',
@@ -62,6 +76,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 8,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-03-01',
       note: '',
       expireDate: '2021-03-31',
@@ -69,6 +85,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 9,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-04-01',
       note: '',
       expireDate: '2021-04-30',
@@ -76,6 +94,8 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 10,
+      userId: 1,
+      classCategoryId: 1,
       date: '2021-05-01',
       note: '',
       expireDate: '2021-05-31',

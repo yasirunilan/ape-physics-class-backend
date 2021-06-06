@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       user.belongsTo(models.userRole)
-      user.belongsToMany(models.classCategory, { through: models.userClassCategory })
       user.hasMany(models.authAccessToken)
+      user.hasMany(models.payment)
       user.hasMany(models.authRefreshToken)
     }
     static comparePassword(password, hash, callback){

@@ -15,14 +15,18 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
-      classCategory.belongsToMany(models.user, { through: models.userClassCategory })
+      classCategory.hasMany(models.payment, {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
   classCategory.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     fee: DataTypes.STRING,
-    active: DataTypes.BOOLEAN
+    active: DataTypes.BOOLEAN,
+    isOnlyPaymentCategory: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'classCategory',

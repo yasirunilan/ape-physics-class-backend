@@ -1,28 +1,18 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('classPayments', {
+    await queryInterface.createTable('ClassSessionPayments', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      paymentId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'payments',
-          key: 'id'
-        }
+      classSessionId: {
+        type: Sequelize.INTEGER
       },
-      userClassCategoryId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'userClassCategories',
-          key: 'id'
-        }
+      paymentId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +25,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('classPayments');
+    await queryInterface.dropTable('ClassSessionPayments');
   }
 };

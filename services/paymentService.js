@@ -1,9 +1,11 @@
 var model = require('../models/index');
 
-exports.addNewPayment = async (data) => {
+exports.addNewPayment = async (data, user) => {
     try {
         let payment = {
             date: data.date,
+            userId: user.id,
+            classCategoryId: data.classCategoryId,
             amount: data.amount,
             expireDate: data.expireDate,
             note: data.note

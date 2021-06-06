@@ -107,6 +107,85 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/payments/classCategories",
+    "title": "Get Class Categories for Payments",
+    "name": "GetClassCategoriesForPayment",
+    "group": "ClassCategoryForPayments",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Query Param": [
+          {
+            "group": "Query Param",
+            "type": "Boolean",
+            "optional": false,
+            "field": "active",
+            "description": "<p>Optional 'active' filter to filter active and non-active class categories.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example: To get active class categories available for payment:",
+          "content": "{\n  \"active\": 1\n}",
+          "type": "json"
+        },
+        {
+          "title": "Request-Example: To get non-active class categories available for payment:",
+          "content": "{\n  \"active\": 0\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>class category available for payment details</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:To get active class categories available for payment:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"2021 Theory/Revision\",\n      \"description\": \"2021 Theory/Revision Class\",\n      \"fee\": \"2500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"2021 Theory\",\n      \"description\": \"2021 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"2021 Revision\",\n      \"description\": \"2021 Revision Class\",\n      \"fee\": \"1000\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"2022 Theory\",\n      \"description\": \"2022 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"2023 Theory\",\n      \"description\": \"2023 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 7,\n      \"name\": \"Practical Videos\",\n      \"description\": \"Practical Videos\",\n      \"fee\": \"\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": true,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    }\n  ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response: To get non-active class categories available for payment:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": [\n    {\n      \"id\": 6,\n      \"name\": \"2020 Theory\",\n      \"description\": \"2020 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": false,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    }\n  ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response: Without Query Params:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"2021 Theory/Revision\",\n      \"description\": \"2021 Theory/Revision Class\",\n      \"fee\": \"2500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"2021 Theory\",\n      \"description\": \"2021 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"2021 Revision\",\n      \"description\": \"2021 Revision Class\",\n      \"fee\": \"1000\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"2022 Theory\",\n      \"description\": \"2022 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"2023 Theory\",\n      \"description\": \"2023 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 6,\n      \"name\": \"2020 Theory\",\n      \"description\": \"2020 Theory Class\",\n      \"fee\": \"1500\",\n      \"active\": false,\n      \"isOnlyPaymentCategory\": false,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    },\n    {\n      \"id\": 7,\n      \"name\": \"Practical Videos\",\n      \"description\": \"Practical Videos\",\n      \"fee\": \"\",\n      \"active\": true,\n      \"isOnlyPaymentCategory\": true,\n      \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n      \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/payment.js",
+    "groupTitle": "ClassCategoryForPayments"
+  },
+  {
+    "type": "get",
     "url": "/classCategories",
     "title": "Get Class Categories",
     "name": "GetClassCategories",
@@ -354,27 +433,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": " {\n\t\"date\": \"2021-10-10\",\n\t\"amount\": 1000,\n\t\"expireDate\": \"2021-11-10\",\n\t\"note\": \"New Note\",\n\t\"slip\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMGZjNjIwMDAwNTA2OTAwMDBhZTZmMDAwMDUyNzgwMDAwMzFhNjAwMDBjY2I0MDAwMGUyYzAwMDAwNzNjYzAwMDBhZTQzMDEwMP/iC/hJQ0NfUFJPRklMRQABAQAAC+gAAAAAAgAAAG1udHJSR0IgWFlaIAfZAAMAGwAVACQAH2Fjc3AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAD21gABAAAAANMtAAAAACn4Pd6v8lWueEL65MqDOQ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEGRlc2MAAAFEAAAAeWJYWVoAAAHAAAAAFGJUUkMAAAHUAAATQLVTRlw93Eefjvh05MHYADaYNNUMAZA0waajTAGqGImCjTgAGBTE4YTqeZtjv8AS+dMghSuvd+u830spuXnTAAAAABD870fjtTzBrp/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=\",\n\t\"slipFileType\": \"image/jpeg\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "object",
-            "optional": false,
-            "field": "data",
-            "description": "<p>added payment data</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": {\n    \"slip\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMGZjNjIwMDAwNTA2OTAwMDBhZTZmMDAwMDUyNzgwMDAwMzFhNjAwMDBjY2I0MDAwMGUyYzAwMDAwNzNjYzAwMDBhZTQzMDEwMP/iC/hJQ0NfUFJPRklMRQABAQAAC+gAAAAAAgAAAG1udHJSR0IgWFlaIAfZAAMAGwAVACQAH2Fjc3AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAD21gABAAAAANMtAAAAACn4Pd6v8lWueEL65MqDOQ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEGRlc2MAAAFEAAAAeWJYWVoAAAHAAAAAFGJUUkMAAAHUAAA/wEM9ngarYSLYkZK8kmBKVpJ0KJHCQtS52JW7Gpb4FuB0KCNIWBaPUhFErVITEyRsbWjCbEyh6JEIT50ehLIJDYgS4KlNLppsajglcivZDfIrGhoYxoayMQdMaVoj6cmJCyjtIsy+EcmeHA2ybb7erGTQyAqIPApFG7HoI/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=\",\n    \"id\": 12,\n    \"date\": \"2021-10-10T00:00:00.000Z\",\n    \"amount\": 1000,\n    \"expireDate\": \"2021-11-10T00:00:00.000Z\",\n    \"slipFileType\": \"image/jpeg\",\n    \"updatedAt\": \"2021-05-23T05:25:55.943Z\",\n    \"createdAt\": \"2021-05-23T05:25:55.943Z\"\n  }\n}",
+          "content": " {\n\t\"date\": \"2021-10-10\",\n\t\"amount\": 1000,\n\t\"classCategoryId\": 1,\n\t\"expireDate\": \"2021-11-10\",\n\t\"note\": \"New Note\",\n\t\"slip\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMG/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=\",\n    \"id\": 11,\n    \"date\": \"2021-10-10T00:00:00.000Z\",\n    \"userId\": 1,\n    \"classCategoryId\": 1,\n    \"amount\": 1000,\n    \"expireDate\": \"2021-11-10T00:00:00.000Z\",\n    \"slipFileType\": \"image/jpeg\",\n    \"updatedAt\": \"2021-06-06T06:57:08.164Z\",\n    \"createdAt\": \"2021-06-06T06:57:08.164Z\"\n  }\n}",
           "type": "json"
         }
       ]
