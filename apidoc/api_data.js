@@ -487,6 +487,50 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/users/loggedInUser",
+    "title": "Get Logged-In User Data",
+    "name": "GetLoggedInUserDetails",
+    "group": "User",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>user details</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": {\n    \"data\": {\n      \"data\": [\n        {\n          \"id\": 2,\n          \"username\": \"yasiru@test.com\",\n          \"firstName\": \"Yasiru\",\n          \"lastName\": \"nilan\",\n          \"email\": \"yasiru@gmail.com\",\n          \"nic\": \"222222222V\",\n          \"phoneMain\": \"0702132850\",\n          \"phoneExtra\": \"0702132851\",\n          \"homePhone\": \"0702132852\",\n          \"city\": \"Matara\",\n          \"examYear\": \"\",\n          \"address\": \"\\\"Wimalasewana\\\", Hingurupanagala,Kotapola\",\n          \"userRoleId\": 2,\n          \"createdAt\": \"2021-06-06T06:55:11.000Z\",\n          \"updatedAt\": \"2021-06-06T06:55:11.000Z\"\n        }\n      ]\n    }\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/user.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
     "url": "/users",
     "title": "Get Users From Filter Values",
     "name": "GetUserFromFilterValues",

@@ -4,7 +4,7 @@ exports.addNewPayment = async (data, user) => {
     try {
         let payment = {
             date: data.date,
-            userId: user.id,
+            userId: user.userId,
             classCategoryId: data.classCategoryId,
             amount: data.amount,
             expireDate: data.expireDate,

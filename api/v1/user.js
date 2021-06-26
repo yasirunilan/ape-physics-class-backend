@@ -147,4 +147,42 @@ const userController = require('../../controllers/userController')
 }
  */
 router.get("/", userController.getUserByFilterValues);
+
+/**
+ * @api {get} /users/loggedInUser Get Logged-In User Data
+ * @apiName GetLoggedInUserDetails
+ * @apiGroup User
+ * @apiVersion 1.0.0
+ * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
+ * @apiSuccess {object} data user details
+ * @apiSuccessExample Success-Response
+ *     HTTP/1.1 200 OK
+ * {
+  "error": false,
+  "data": {
+    "data": {
+      "data": [
+        {
+          "id": 2,
+          "username": "yasiru@test.com",
+          "firstName": "Yasiru",
+          "lastName": "nilan",
+          "email": "yasiru@gmail.com",
+          "nic": "222222222V",
+          "phoneMain": "0702132850",
+          "phoneExtra": "0702132851",
+          "homePhone": "0702132852",
+          "city": "Matara",
+          "examYear": "",
+          "address": "\"Wimalasewana\", Hingurupanagala,Kotapola",
+          "userRoleId": 2,
+          "createdAt": "2021-06-06T06:55:11.000Z",
+          "updatedAt": "2021-06-06T06:55:11.000Z"
+        }
+      ]
+    }
+  }
+}
+ */
+router.get("/loggedInUser", userController.getLoggedInUser);
 module.exports = router;

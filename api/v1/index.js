@@ -16,6 +16,7 @@ router.use('/users', function(req, res, next) {
     passport.authenticate('bearer', function(err, user, info) {
         if (err) { return next(err) }
         if (!user) { return res.status(401).send({data: [], error: true, message: "Invalid Token"}) }
+        req.user = user;
         next();
     })(req, res, next);
 }, userRoutes);

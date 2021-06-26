@@ -9,6 +9,9 @@ exports.getUsersByFilters = async (filters) => {
             if(filters.username){
                 userDataFilters.username = filters.username;
             }
+            if(filters.userId){
+                userDataFilters.id = filters.userId;
+            }
             if(filters.email){
                 userDataFilters.email = filters.email;
             }
