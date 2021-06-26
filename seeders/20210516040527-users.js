@@ -29,6 +29,7 @@ module.exports = {
       examYear: '2022',
       address: '"Wimalasewana", Hingurupanagala,Kotapola',
       userRoleId: 3,
+      status: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -46,6 +47,7 @@ module.exports = {
       examYear: '',
       address: '"Wimalasewana", Hingurupanagala,Kotapola',
       userRoleId: 2,
+      status: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -63,6 +65,7 @@ module.exports = {
       examYear: '',
       address: '"Wimalasewana", Hingurupanagala,Kotapola',
       userRoleId: 1,
+      status: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -80,6 +83,7 @@ module.exports = {
       examYear: '',
       address: '"Wimalasewana", Hingurupanagala,Kotapola',
       userRoleId: 1,
+      status: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -98,6 +102,7 @@ module.exports = {
         examYear: '2022',
         address: '"Wimalasewana", Hingurupanagala,Kotapola',
         userRoleId: 3,
+        status: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});

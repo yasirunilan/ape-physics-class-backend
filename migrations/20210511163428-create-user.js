@@ -52,6 +52,15 @@ module.exports = {
           key: 'id'
         }
       },
+      status: {
+        type: Sequelize.BOOLEAN
+      },
+      profilePicture: {
+        type: Sequelize.BLOB('Medium')
+      },
+      profilePictureImageType: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

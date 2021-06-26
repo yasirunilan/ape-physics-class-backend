@@ -185,4 +185,86 @@ router.get("/", userController.getUserByFilterValues);
 }
  */
 router.get("/loggedInUser", userController.getLoggedInUser);
+
+
+/**
+ * @api {post} /users/addUser Add New User
+ * @apiName AddNewUser
+ * @apiGroup User
+ * @apiVersion 1.0.0
+ * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
+ * @apiParamExample {json} Request-Example:
+ {
+            "username": "saman",
+            "password": "12345",
+            "firstName": "Yasiru",
+            "lastName": "Nilan",
+            "email": "ajith@gmail.com",
+            "nic": "1212323322313",
+            "phoneMain": "07023232232",
+            "phoneExtra": "07023232232",
+            "homePhone": "07023232232",
+            "city": "Matara",
+            "examYear": "2021",
+            "address": "Wimalasewana, Hingurupanagala, Kotapola",
+		    "profilePictureImageType": "image/png",
+			"profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUmCC"
+        }
+ }
+ */
+router.post("/addUser", userController.addNewUser);
+
+/**
+ * @api {patch} /users/:userId Update User Profile
+ * @apiName UpdateUserProfile
+ * @apiGroup User
+ * @apiVersion 1.0.0
+ * @apiParam {Number} userId  userId
+ * @apiParamExample {json} Request-Example:
+ {
+            "username": "saman",
+            "password": "12345",
+            "firstName": "Saman",
+            "lastName": "Priyankara",
+            "email": "ajith@gmail.com",
+            "nic": "1212323322313",
+            "phoneMain": "07023232232",
+            "phoneExtra": "07023232232",
+            "homePhone": "07023232232",
+            "city": "Matara",
+            "examYear": "2021",
+            "address": "Wimalasewana, Hingurupanagala, Kotapola",
+						"profilePictureImageType": "image/png",
+						"profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSCC"
+        }
+ * @apiSuccess {object} data updated user data
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+  "error": false,
+  "data": {
+    "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnUmCC",
+    "id": 9,
+    "username": "saman",
+    "password": "$2a$10$u4h1S/4WGhjT/amUwrw6c.lfAzNPNofeOejP6DzNmbRZJn8JwwaYi",
+    "firstName": "Saman",
+    "lastName": "Priyankara",
+    "email": "ajith@gmail.com",
+    "nic": "1212323322313",
+    "phoneMain": "07023232232",
+    "phoneExtra": "07023232232",
+    "homePhone": "07023232232",
+    "city": "Matara",
+    "examYear": "2021",
+    "address": "Wimalasewana, Hingurupanagala, Kotapola",
+    "userRoleId": 3,
+    "status": true,
+    "profilePictureImageType": "image/png",
+    "createdAt": "2021-06-26T12:13:09.000Z",
+    "updatedAt": "2021-06-26T12:35:25.593Z"
+  }
+}
+ */
+router.patch('/:userId', userController.updateUserProfile)
+
 module.exports = router;

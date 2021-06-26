@@ -79,3 +79,91 @@ exports.saveAuthUserAccessTokenFromRefreshToken = async (username, accessToken) 
         return false;
     }
 }
+
+exports.addNewUser = async (data) => {
+    try {
+        let user = {
+            username: data.username,
+            password: data.password? data.password:12345,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            nic: data.nic,
+            phoneMain: data.phoneMain,
+            phoneExtra: data.phoneExtra,
+            homePhone: data.homePhone,
+            city: data.city,
+            examYear: data.examYear,
+            address: data.address,
+            status: 1,
+            userRoleId: 3,
+        };
+
+        if(data.profilePicture){
+            user.profilePicture = data.profilePicture;
+            user.profilePictureImageType = data.profilePictureImageType
+        }
+        let savedUser = await model.user.create(user)
+        return savedUser;
+
+    } catch(e) {
+        console.log(e.message)
+        return false;
+    }
+}
+
+exports.updateUserProfile = async (id, data) => {
+    try {
+        const user = await model.user.findOne({ where: {id: id}});
+
+        if(data.firstName){
+            user.firstName = data.firstName
+        }
+        if(data.lastName){
+            user.lastName = data.lastName
+        }
+        if(data.email){
+            user.email = data.email
+        }
+        if(data.nic){
+            user.nic = data.nic
+        }
+        if(data.phoneMain){
+            user.phoneMain = data.phoneMain
+        }
+        if(data.phoneExtra){
+            user.phoneExtra = data.phoneExtra
+        }
+        if(data.homePhone){
+            user.homePhone = data.homePhone
+        }
+        if(data.city){
+            user.city = data.city
+        }
+        if(data.examYear){
+            user.examYear = data.examYear
+        }
+        if(data.address){
+            user.address = data.address
+        }
+        if(data.userRoleId){
+            user.userRoleId = data.userRoleId
+        }
+        if(data.status){
+            user.status = data.status
+        }
+        if(data.profilePictureImageType){
+            user.profilePictureImageType = data.profilePictureImageType
+        }
+        if(data.profilePicture){
+            user.profilePicture = data.profilePicture
+        }
+
+        await user.save();
+
+        return user;
+    } catch(e) {
+        console.log(e.message)
+        return false;
+    }
+}
