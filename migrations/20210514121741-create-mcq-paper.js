@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       documents: {
-        type: Sequelize.JSON
+        type: Sequelize.TEXT
       },
       active: {
         type: Sequelize.BOOLEAN

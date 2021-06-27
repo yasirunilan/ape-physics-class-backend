@@ -26,7 +26,7 @@ const classCategoriesController = require('../../controllers/classCategoriesCont
 	"classCategoryId": 1,
 	"expireDate": "2021-11-10",
 	"classCategoryId": 1,
-	"extraData": {"practicals":[1,2,3]},
+	"extraData": "{\"practicals\":[1,2,3]}",
 	"slip": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4Qkl4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=",
 	"slipFileType": "image/jpeg"
  }
@@ -60,13 +60,7 @@ const classCategoriesController = require('../../controllers/classCategoriesCont
     "classCategoryId": 1,
     "amount": 1000,
     "expireDate": "2021-11-10T00:00:00.000Z",
-    "extraData": {
-      "practicals": [
-        1,
-        2,
-        3
-      ]
-    },
+    "extraData": "{\"practicals\":[1,2,3]}",
     "slipFileType": "image/jpeg",
     "updatedAt": "2021-06-27T06:04:48.981Z",
     "createdAt": "2021-06-27T06:04:48.981Z"

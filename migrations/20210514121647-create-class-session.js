@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       documents: {
-        type: Sequelize.JSON
+        type: Sequelize.TEXT
       },
       classCategoryId: {
         type: Sequelize.INTEGER,

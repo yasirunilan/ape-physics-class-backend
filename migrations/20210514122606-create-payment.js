@@ -40,7 +40,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       extraData: {
-        type: Sequelize.JSON
+        type: Sequelize.TEXT
       },
       expireDate: {
         type: Sequelize.DATE

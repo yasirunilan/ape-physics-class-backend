@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     date: DataTypes.DATE,
     link: DataTypes.STRING,
-    documents: DataTypes.JSON,
+    documents: DataTypes.TEXT,
     classCategoryId: DataTypes.INTEGER,
   }, {
     sequelize,

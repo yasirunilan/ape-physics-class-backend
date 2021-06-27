@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     amount: DataTypes.NUMBER,
     expireDate: DataTypes.DATE,
     note: DataTypes.STRING,
-    extraData: DataTypes.JSON
+    extraData: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'payment',
