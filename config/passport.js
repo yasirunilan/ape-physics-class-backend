@@ -50,7 +50,7 @@ passport.use('bearer',new BearerStrategy(
 
 passport.use('refreshAuthBearer',new BearerStrategy(
     async function(token, done) {
-        const authToken = await models.AuthRefreshToken.findOne({ where: {token: token, expires: {
+        const authToken = await models.authRefreshToken.findOne({ where: {token: token, expires: {
                     [sequelize.Op.gte]: moment()
                 } }, include: ['user'] });
         if (!authToken) { return done(null, false); }
