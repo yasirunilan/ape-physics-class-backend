@@ -9,23 +9,67 @@ const classCategoriesController = require('../../controllers/classCategoriesCont
  * @apiGroup Payment
  * @apiVersion 1.0.0
  * @apiHeader {String} Authorization ='Bearer 2a81e13969953cdddc7596f0766d2ce5b3e848b7'
- * @apiParamExample {json} Request-Example:
+ * @apiParamExample {json} Request-Example: Without Extra Data(Class Payments)
  {
 	"date": "2021-10-10",
 	"amount": 1000,
 	"classCategoryId": 1,
 	"expireDate": "2021-11-10",
-	"note": "New Note",
-	"slip": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMG/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=",
-    "id": 11,
+	"classCategoryId": 1,
+	"slip": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4Qkl4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=",
+	"slipFileType": "image/jpeg"
+}
+ * @apiParamExample {json} Request-Example: With Extra Data(Practical Payments)
+ {
+	"date": "2021-10-10",
+	"amount": 1000,
+	"classCategoryId": 1,
+	"expireDate": "2021-11-10",
+	"classCategoryId": 1,
+	"extraData": {"practicals":[1,2,3]},
+	"slip": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4Qkl4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=",
+	"slipFileType": "image/jpeg"
+ }
+ * @apiSuccess {object} data payment information
+ * @apiSuccessExample Success-Response:Without Extra Data(Class Payments)
+ *     HTTP/1.1 200 OK
+ * {
+  "error": false,
+  "data": {
+    "slip": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMGZjNjIwMDAwNT7Gpb4FuB0KCNIWBaPUhFErVITEyRsbWjCbEyh6JEIT50ehLIJDYgS4KlNLppsajglcivZDfIrGhoYxoayMQdMaVoj6cmJCyjtIsy+EcmeHA2ybb7erGTQyAqIPApFG7HoI/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=",
+    "id": 14,
     "date": "2021-10-10T00:00:00.000Z",
-    "userId": 1,
+    "userId": 2,
     "classCategoryId": 1,
     "amount": 1000,
     "expireDate": "2021-11-10T00:00:00.000Z",
     "slipFileType": "image/jpeg",
-    "updatedAt": "2021-06-06T06:57:08.164Z",
-    "createdAt": "2021-06-06T06:57:08.164Z"
+    "updatedAt": "2021-06-27T06:04:48.981Z",
+    "createdAt": "2021-06-27T06:04:48.981Z"
+  }
+}
+ * @apiSuccessExample Success-Response:With Extra Data(Practical Payments)
+ *     HTTP/1.1 200 OK
+ * {
+  "error": false,
+  "data": {
+    "slip": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCcUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAIAcAmcAFGJ5VDUwOGR5OGcxUGo3cjZBUmNLHAIoAGJGQk1EMDEwMDBhOWMwZDAwMDAzZDQyMDAwMGZjNjIwMDAwNT7Gpb4FuB0KCNIWBaPUhFErVITEyRsbWjCbEyh6JEIT50ehLIJDYgS4KlNLppsajglcivZDfIrGhoYxoayMQdMaVoj6cmJCyjtIsy+EcmeHA2ybb7erGTQyAqIPApFG7HoI/Q1pfUrBbihpsqBwblEjgJklfRDcyIavyiI4jGxO4l4I8EeNRhpxZCcIithLwW2IjKUJ0W4PHSg0ErYfoW00VkRLIjguhUkBQ1agQ0PU0ORJG0JqSMj/9k=",
+    "id": 14,
+    "date": "2021-10-10T00:00:00.000Z",
+    "userId": 2,
+    "classCategoryId": 1,
+    "amount": 1000,
+    "expireDate": "2021-11-10T00:00:00.000Z",
+    "extraData": {
+      "practicals": [
+        1,
+        2,
+        3
+      ]
+    },
+    "slipFileType": "image/jpeg",
+    "updatedAt": "2021-06-27T06:04:48.981Z",
+    "createdAt": "2021-06-27T06:04:48.981Z"
   }
 }
  */

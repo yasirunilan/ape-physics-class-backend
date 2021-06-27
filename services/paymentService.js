@@ -8,6 +8,7 @@ exports.addNewPayment = async (data, user) => {
             classCategoryId: data.classCategoryId,
             amount: data.amount,
             expireDate: data.expireDate,
+            extraData: data.extraData,
             note: data.note
         };
 
