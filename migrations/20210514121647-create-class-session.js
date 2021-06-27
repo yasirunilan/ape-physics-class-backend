@@ -20,6 +20,9 @@ module.exports = {
       link: {
         type: Sequelize.STRING
       },
+      documents: {
+        type: Sequelize.JSON
+      },
       classCategoryId: {
         type: Sequelize.INTEGER,
         allowNull: false,

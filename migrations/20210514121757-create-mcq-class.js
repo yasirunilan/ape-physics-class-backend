@@ -17,6 +17,9 @@ module.exports = {
       link: {
         type: Sequelize.STRING
       },
+      documents: {
+        type: Sequelize.JSON
+      },
       active: {
         type: Sequelize.BOOLEAN
       },

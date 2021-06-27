@@ -40,7 +40,8 @@ module.exports = (sequelize, DataTypes) => {
     slipFileType: DataTypes.STRING,
     amount: DataTypes.NUMBER,
     expireDate: DataTypes.DATE,
-    note: DataTypes.STRING
+    note: DataTypes.STRING,
+    extraData: DataTypes.JSON
   }, {
     sequelize,
     modelName: 'payment',

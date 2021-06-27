@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     date: DataTypes.DATE,
     link: DataTypes.STRING,
+    documents: DataTypes.JSON,
     classCategoryId: DataTypes.INTEGER,
   }, {
     sequelize,

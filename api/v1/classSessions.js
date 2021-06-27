@@ -21,6 +21,10 @@ const classSessionsController = require('../../controllers/classSessionsControll
       "description": "2021-01-07 Class",
       "date": "2021-01-07T00:00:00.000Z",
       "link": "https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1",
+      "documents": [
+        "https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/view?hl=en&resourcekey=0-5DqnTtXPFvySMiWstuAYdA",
+        "https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/view?hl=en&resourcekey=0-5DqnTtXPFvySMiWstuAYdA"
+      ],
       "classCategoryId": 1,
       "createdAt": "2021-05-16T07:04:12.000Z",
       "updatedAt": "2021-05-16T07:04:12.000Z",
@@ -31,6 +35,9 @@ const classSessionsController = require('../../controllers/classSessionsControll
       "description": "2021-01-14 Class",
       "date": "2021-01-14T00:00:00.000Z",
       "link": "https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1",
+      "documents": [
+        "https://drive.google.com/file/d/0B1HXnM1lBuoqMzVhZjcwNTAtZWI5OS00ZDg3LWEyMzktNzZmYWY2Y2NhNWQx/view?hl=en&resourcekey=0-5DqnTtXPFvySMiWstuAYdA",
+      ],
       "classCategoryId": 1,
       "createdAt": "2021-05-16T07:04:12.000Z",
       "updatedAt": "2021-05-16T07:04:12.000Z",
@@ -41,6 +48,7 @@ const classSessionsController = require('../../controllers/classSessionsControll
       "description": "2021-01-21 Class",
       "date": "2021-01-21T00:00:00.000Z",
       "link": "https://www.youtube.com/watch?v=IYfgkdy82lo&list=RDIYfgkdy82lo&index=1",
+      "documents": null,
       "classCategoryId": 1,
       "createdAt": "2021-05-16T07:04:12.000Z",
       "updatedAt": "2021-05-16T07:04:12.000Z",

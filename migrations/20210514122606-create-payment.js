@@ -39,6 +39,9 @@ module.exports = {
       note: {
         type: Sequelize.STRING
       },
+      extraData: {
+        type: Sequelize.JSON
+      },
       expireDate: {
         type: Sequelize.DATE
       },
