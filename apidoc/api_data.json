@@ -676,6 +676,50 @@
     "groupTitle": "User"
   },
   {
+    "type": "post",
+    "url": "/signup",
+    "title": "Signup New User",
+    "name": "SignupNewUser",
+    "group": "User",
+    "version": "1.0.0",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example: Successful Sign Up",
+          "content": " {\n            \"username\": \"saman\",\n            \"password\": \"12345\",\n            \"firstName\": \"Yasiru\",\n            \"lastName\": \"Nilan\",\n            \"email\": \"ajith@gmail.com\",\n            \"nic\": \"1212323322313\",\n            \"phoneMain\": \"07023232232\",\n            \"phoneExtra\": \"07023232232\",\n            \"homePhone\": \"07023232232\",\n            \"city\": \"Matara\",\n            \"examYear\": \"2021\",\n            \"address\": \"Wimalasewana, Hingurupanagala, Kotapola\",\n\t\t    \"profilePictureImageType\": \"image/png\",\n\t\t\t\"profilePicture\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUmCC\"\n        }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>signed up user information</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:Successful Sign Up",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"error\": false,\n  \"data\": {\n    \"profilePicture\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhuQmCC\",\n    \"id\": 7,\n    \"username\": \"samann\",\n    \"password\": \"$2a$10$yRZemjz0M/YWEIzSMN67teRG8N1O2ZTgAUdpuv685PO1zIh2ytkgC\",\n    \"firstName\": \"Yasiru\",\n    \"lastName\": \"Nilan\",\n    \"email\": \"ajith@gmail.com\",\n    \"nic\": \"1212323322313\",\n    \"phoneMain\": \"07023232232\",\n    \"phoneExtra\": \"07023232232\",\n    \"homePhone\": \"07023232232\",\n    \"city\": \"Matara\",\n    \"examYear\": \"2021\",\n    \"address\": \"Wimalasewana, Hingurupanagala, Kotapola\",\n    \"status\": true,\n    \"userRoleId\": 3,\n    \"profilePictureImageType\": \"image/png\",\n    \"updatedAt\": \"2021-06-27T13:09:21.312Z\",\n    \"createdAt\": \"2021-06-27T13:09:21.312Z\"\n  },\n  \"message\": \"Successfully Added\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:When user exists with same username",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"data\": [],\n  \"error\": true,\n  \"message\": \"User with Same Username Exists\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/v1/signup.js",
+    "groupTitle": "User"
+  },
+  {
     "type": "patch",
     "url": "/users/:userId",
     "title": "Update User Profile",

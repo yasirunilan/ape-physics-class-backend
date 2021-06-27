@@ -9,8 +9,10 @@ var mcqClassRoutes  = require('./mcqClass');
 var mcqPapersRoutes  = require('./mcqPapers');
 var practicalVideoRoutes  = require('./practicalVideo');
 var paymentRoutes  = require('./payment');
+var signupRoutes  = require('./signup');
 
 router.use('/auth', authRoutes);
+router.use('/signup', signupRoutes);
 
 router.use('/users', function(req, res, next) {
     passport.authenticate('bearer', function(err, user, info) {
