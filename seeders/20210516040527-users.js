@@ -13,10 +13,10 @@ module.exports = {
      * }], {});
     */
     const salt = bcrypt.genSaltSync();
-    let pass = bcrypt.hashSync('12345', salt);
+    let pass = bcrypt.hashSync('12345678', salt);
     await queryInterface.bulkInsert('users', [{
       id: 1,
-      username: 'buddhi',
+      username: 'buddhi@gmail.com',
       password: pass,
       firstName: 'Buddhi',
       lastName: "Vikasitha",
@@ -34,7 +34,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 2,
-      username: 'yasiru',
+      username: 'yasiru@gmail.com',
       password: pass,
       firstName: 'Yasiru',
       lastName: "nilan",
@@ -52,7 +52,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 3,
-      username: 'nevil',
+      username: 'nevil@gmail.com',
       password: pass,
       firstName: 'Nevil',
       lastName: "Krishan",
@@ -70,7 +70,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       id: 4,
-      username: 'ythilina',
+      username: 'thilina@gmail.com',
       password: pass,
       firstName: 'Thilina',
       lastName: "Kumarasinghe",
@@ -89,7 +89,7 @@ module.exports = {
     },
       {
         id: 5,
-        username: 'eshan',
+        username: 'eshan@gmail.com',
         password: pass,
         firstName: 'Eshan',
         lastName: "Pathirana",
