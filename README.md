@@ -10,7 +10,7 @@ This is the backend app for Physics Ape Panthiya written using NodeJs.
 
     ```docker-compose up -d``` 
 4. first create the database by logging in to the mariadb container
-   ```docker exec -it physics_mariadb_102 /bin/bash/```
+   ```docker exec -it physics_mariadb_102 /bin/bash```
 5. then update the config.json file with correct values.
 6. now again restart the physics_backend container.
 7. log in to the physics_backend and execute the following commands to run the migrations against the db and load dummy data using seeds

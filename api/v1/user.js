@@ -228,7 +228,6 @@ router.post("/addUser", userController.addNewUser);
  * @apiParamExample {json} Request-Example:
  {
             "username": "saman",
-            "password": "12345",
             "firstName": "Saman",
             "lastName": "Priyankara",
             "email": "ajith@gmail.com",
@@ -251,7 +250,6 @@ router.post("/addUser", userController.addNewUser);
     "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnUmCC",
     "id": 9,
     "username": "saman",
-    "password": "$2a$10$u4h1S/4WGhjT/amUwrw6c.lfAzNPNofeOejP6DzNmbRZJn8JwwaYi",
     "firstName": "Saman",
     "lastName": "Priyankara",
     "email": "ajith@gmail.com",

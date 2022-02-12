@@ -114,7 +114,7 @@ exports.addNewUser = async (data) => {
 
 exports.updateUserProfile = async (id, data) => {
     try {
-        const user = await model.user.findOne({ where: {id: id}});
+        const user = await model.user.findOne({ where: {id: id}, attributes: { exclude: ['password'] }});
 
         if(data.firstName){
             user.firstName = data.firstName
@@ -159,6 +159,7 @@ exports.updateUserProfile = async (id, data) => {
             user.profilePicture = data.profilePicture
         }
 
+        console.log(user);
         await user.save();
 
         return user;
